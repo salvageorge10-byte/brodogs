@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brodog's — Sabor Real | Hamburguesas en City Bell</title>
+<meta name="description" content="Brodog's — hamburguesas gourmet hechas al momento en City Bell. Pedidos por Instagram.">
+<meta name="theme-color" content="#0D0C0B">
+
+<!-- Vista previa al compartir el link en WhatsApp / Instagram / Facebook -->
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:site_name" content="Brodog's">
+<meta property="og:title" content="Brodog's — Sabor Real 🔥">
+<meta property="og:description" content="Hamburguesas gourmet hechas al momento en City Bell. Pedidos por Instagram.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brodog's — Sabor Real 🔥">
+<meta name="twitter:description" content="Hamburguesas gourmet hechas al momento en City Bell. Pedidos por Instagram.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1200&q=80">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+<!-- Datos estructurados: ayuda a Google a mostrar horarios, menú y ubicación en resultados de búsqueda -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FastFoodRestaurant",
+  "name": "Brodog's",
+  "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1200&q=80",
+  "servesCuisine": "Hamburguesas",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "City Bell",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "12:00", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "20:00", "closes": "00:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/brodogs.cb/"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#inicio" class="logo" aria-label="Brodog's — inicio">
+      <!-- Placeholder de logo: reemplazar por <img src="assets/logo.svg"> cuando esté el logo definitivo -->
+      <span class="logo-mark">BRODOG'S</span>
+      <span class="logo-sub">sabor real 🔥</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#menu" class="nav-link">Menú</a></li>
+        <li><a href="#acompanamientos" class="nav-link">Acompañamientos</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="mobile-social">
+        <a href="https://www.instagram.com/brodogs.cb/" class="icon-link" target="_blank" rel="noopener" aria-label="Ver perfil de Instagram">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          <span>@brodogs.cb</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://www.instagram.com/brodogs.cb/" class="icon-link" target="_blank" rel="noopener" aria-label="Ver perfil de Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>SABOR REAL</span><span>🔥</span>
+    <span>CITY BELL</span><span>🔥</span>
+    <span>PEDÍS POR INSTAGRAM</span><span>🔥</span>
+    <span>HECHO AL MOMENTO</span><span>🔥</span>
+    <span>SABOR REAL</span><span>🔥</span>
+    <span>CITY BELL</span><span>🔥</span>
+    <span>PEDÍS POR INSTAGRAM</span><span>🔥</span>
+    <span>HECHO AL MOMENTO</span><span>🔥</span>
+  </div>
+</div>
+
+<main id="contenido">
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1600&q=80"
+           alt="Hamburguesa doble con cheddar y panceta, estilo flame-grilled"
+           loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="status-pill" id="statusPill">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Verificando horario…</span>
+      </div>
+      <p class="eyebrow">CITY BELL · HECHO AL MOMENTO 🔥</p>
+      <h1>Sabor real.<br>Sin vueltas.</h1>
+      <p class="hero-copy">Medallones jugosos, pan de papa y salsas de la casa. Hamburguesas hechas al momento en City Bell.</p>
+      <button type="button" class="btn btn-flame" data-ig-order data-name="Brodog's" data-variant="" data-price="">Pedir por Instagram</button>
+    </div>
+    <a href="#menu" class="scroll-cue" aria-hidden="true">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- MENÚ -->
+  <section class="catalog" id="menu">
+    <div class="section-heading reveal">
+      <p class="eyebrow">LA CARTA</p>
+      <h2>Hamburguesas</h2>
+      <p class="section-note">Todas las burgers pueden pedirse en combo con papas fritas.</p>
+    </div>
+
+    <div class="catalog-grid">
+
+      <article class="product-card reveal" data-name="Cheese Burger">
+        <figure class="product-media">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Cheese Burger con cheddar y pan de papa" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>Cheese Burger</h3>
+          <p class="product-desc">Medallón de carne, queso cheddar y pan de papa.</p>
+          <div class="size-selector" role="group" aria-label="Elegir tamaño">
+            <button type="button" class="size-btn is-active" data-price="14.000">Simple</button>
+            <button type="button" class="size-btn" data-price="18.000">Doble</button>
+            <button type="button" class="size-btn" data-price="20.100">Triple</button>
+          </div>
+          <p class="product-price">$ <span class="price-value">14.000</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="Cheese Burger" data-variant="Simple" data-price="14.000">Pedir esta burger</button>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-name="Bacon Cheese Burger">
+        <figure class="product-media">
+          <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=800&q=80" alt="Bacon Cheese Burger con panceta crocante" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>Bacon Cheese Burger</h3>
+          <p class="product-desc">Medallón de carne, cheddar, panceta crocante y salsa especial.</p>
+          <div class="size-selector" role="group" aria-label="Elegir tamaño">
+            <button type="button" class="size-btn is-active" data-price="14.600">Simple</button>
+            <button type="button" class="size-btn" data-price="18.400">Doble</button>
+          </div>
+          <p class="product-price">$ <span class="price-value">14.600</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="Bacon Cheese Burger" data-variant="Simple" data-price="14.600">Pedir esta burger</button>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-name="American / Oklahoma Burger">
+        <figure class="product-media">
+          <span class="badge">Doble</span>
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="American Oklahoma Burger con cebolla y cheddar" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>American / Oklahoma</h3>
+          <p class="product-desc">Medallón aplastado sobre cebolla finamente picada, cheddar y salsa estilo americana.</p>
+          <p class="product-price">$ <span class="price-value">18.100</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="American / Oklahoma Burger" data-variant="Doble" data-price="18.100">Pedir esta burger</button>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-name="Royale / Fresh Burger">
+        <figure class="product-media">
+          <span class="badge">Doble</span>
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80" alt="Royale Fresh Burger con lechuga tomate y cebolla morada" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>Royale / Fresh</h3>
+          <p class="product-desc">Medallón, cheddar, lechuga, tomate, cebolla morada y mayonesa de la casa.</p>
+          <p class="product-price">$ <span class="price-value">18.100</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="Royale / Fresh Burger" data-variant="Doble" data-price="18.100">Pedir esta burger</button>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-name="Crispy Onion / BBQ">
+        <figure class="product-media">
+          <span class="badge">Doble</span>
+          <img src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=80" alt="Crispy Onion BBQ Burger con cebolla crispy" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>Crispy Onion / BBQ</h3>
+          <p class="product-desc">Medallón, cheddar, panceta, cebolla crispy rebozada y salsa BBQ casera.</p>
+          <p class="product-price">$ <span class="price-value">18.500</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="Crispy Onion / BBQ Burger" data-variant="Doble" data-price="18.500">Pedir esta burger</button>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-name="Veggie / Not Burger">
+        <figure class="product-media">
+          <span class="badge badge-outline">Veggie</span>
+          <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=800&q=80" alt="Veggie Not Burger con medallón vegetal" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>Veggie / Not Burger</h3>
+          <p class="product-desc">Medallón vegetal (garbanzo/hongo) o NotCo, queso vegano, lechuga, tomate y alioli.</p>
+          <p class="product-price">$ <span class="price-value">14.100</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="Veggie / Not Burger" data-variant="" data-price="14.100">Pedir esta burger</button>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-name="Chicken Crispy Burger">
+        <figure class="product-media">
+          <img src="https://images.unsplash.com/photo-1615297928064-24977384d0da?auto=format&fit=crop&w=800&q=80" alt="Chicken Crispy Burger con pollo rebozado" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>Chicken Crispy</h3>
+          <p class="product-desc">Pechuga de pollo rebozada ultra crocante, lechuga, pepinillos y alioli picante.</p>
+          <p class="product-price">$ <span class="price-value">13.900</span></p>
+          <button type="button" class="btn btn-whatsapp" data-ig-order data-name="Chicken Crispy Burger" data-variant="" data-price="13.900">Pedir esta burger</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DIFERENCIALES -->
+  <section class="features reveal" aria-label="Lo que nos distingue">
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+      <span>Medallón 100% carne, sin rellenos</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M4 8h16M4 16h10"/></svg>
+      <span>Pan de papa horneado a diario</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 4v16M5 4c3 0 3 2 6 2s3-2 6-2v9c-3 0-3 2-6 2s-3-2-6-2"/></svg>
+      <span>Salsas y aderezos 100% caseros</span>
+    </div>
+  </section>
+
+  <!-- ACOMPAÑAMIENTOS -->
+  <section class="sides" id="acompanamientos">
+    <div class="section-heading reveal">
+      <p class="eyebrow">PARA SUMAR</p>
+      <h2>Acompañamientos</h2>
+    </div>
+
+    <div class="sides-grid reveal">
+      <div class="side-item">
+        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=70" alt="Papas fritas clásicas" loading="lazy">
+        <div>
+          <h4>Papas Fritas Clásicas</h4>
+          <span>$ 11.000</span>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=400&q=70" alt="Papas cheddar y bacon" loading="lazy">
+        <div>
+          <h4>Papas Cheddar &amp; Bacon</h4>
+          <span>$ 15.900</span>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=400&q=70" alt="Papas Brodogs" loading="lazy">
+        <div>
+          <h4>Papas Brodogs</h4>
+          <span>$ 17.500</span>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=400&q=70" alt="Nuggets de pollo" loading="lazy">
+        <div>
+          <h4>Nuggets de Pollo (6u)</h4>
+          <span>$ 12.500</span>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=400&q=70" alt="Bastones de mozzarella" loading="lazy">
+        <div>
+          <h4>Bastones de Mozzarella</h4>
+          <span>$ 13.000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dips reveal">
+      <span class="dips-label">Dips &amp; salsas adicionales ($1.500–$2.500 c/u):</span>
+      <span class="chip">Cheddar caliente</span>
+      <span class="chip">Salsa Brodogs</span>
+      <span class="chip">BBQ ahumada</span>
+      <span class="chip">Alioli</span>
+      <span class="chip">Mil Islas</span>
+    </div>
+
+    <div class="extras reveal">
+      <div>
+        <h4>Bebidas</h4>
+        <ul>
+          <li>Gaseosa línea Coca-Cola <span>$ 3.100</span></li>
+          <li>Agua mineral / saborizada <span>$ 2.800</span></li>
+          <li>Cerveza lata (IPA / Honey / Lager) <span>$ 4.500</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Postres</h4>
+        <ul>
+          <li>Chocotorta en vaso <span>$ 6.000</span></li>
+          <li>Oreo Cup <span>$ 6.000</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="location" id="contacto">
+    <div class="location-info reveal">
+      <p class="eyebrow">ENCONTRANOS</p>
+      <h2>Zona &amp; contacto</h2>
+      <ul class="location-list">
+        <li><strong>Zona de entrega:</strong> City Bell, La Plata</li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/brodogs.cb/" target="_blank" rel="noopener">@brodogs.cb</a></li>
+        <li><strong>Horario:</strong> 12 a 15 hs · 20 a 00 hs</li>
+        <li><strong>Pedidos:</strong> por DM de Instagram</li>
+      </ul>
+      <div class="location-actions">
+        <button type="button" class="btn btn-flame" data-ig-order data-name="Brodog's" data-variant="" data-price="">Escribir por Instagram</button>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=City+Bell,+Buenos+Aires,+Argentina" class="btn btn-outline-light" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="location-map">
+      <!-- Placeholder de mapa centrado en City Bell: reemplazar el query por la dirección exacta si hay local físico -->
+      <iframe
+        src="https://www.google.com/maps?q=City+Bell,+Buenos+Aires,+Argentina&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa de zona de entrega de Brodog's">
+      </iframe>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-mark">BRODOG'S</span>
+      <span class="logo-sub">sabor real 🔥</span>
+      <p>Hamburguesas hechas al momento en City Bell. Pedidos por Instagram.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/brodogs.cb/" class="icon-link" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#acompanamientos">Acompañamientos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contacto</h4>
+      <ul>
+        <li>City Bell, La Plata</li>
+        <li>12 a 15 hs · 20 a 00 hs</li>
+        <li>@brodogs.cb</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Brodog's. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- BOTÓN FLOTANTE INSTAGRAM -->
+<button type="button" class="whatsapp-float" data-ig-order data-name="Brodog's" data-variant="" data-price="" aria-label="Pedir por Instagram">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+</button>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
