@@ -1,8 +1,97 @@
-document.addEventListener('DOMContentLoaded', () => {
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabase = createClient(
+  'https://mssnxedqpeozgmahqfuo.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zc254ZWRxcGVvemdtYWhxZnVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU1MDQyNDcsImV4cCI6MjEwMTA4MDI0N30.vcrrLcbLMYDWptJUo5l_HdsRxx9eIQfusuUsXe83g00'
+);
+
+document.addEventListener('DOMContentLoaded', async () => {
 
   const WHATSAPP_PHONE = '5492215699380';
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Traer el menú desde Supabase y armar las tarjetas ---------- */
+  function formatPrice(num) {
+    return num.toLocaleString('es-AR');
+  }
+
+  function renderBurgerCard(item) {
+    const variants = [...item.menu_item_variants].sort((a, b) => a.sort_order - b.sort_order);
+    const defaultVariant = variants.find(v => v.is_default) || variants[0];
+    const badgeHtml = item.badge
+      ? `<span class="badge${item.badge_style === 'outline' ? ' badge-outline' : ''}">${item.badge}</span>`
+      : '';
+    const sizeSelectorHtml = variants.length > 1 ? `
+          <div class="size-selector" role="group" aria-label="Elegir tamaño">
+            ${variants.map(v => `<button type="button" class="size-btn${v.id === defaultVariant.id ? ' is-active' : ''}" data-price="${formatPrice(v.price)}">${v.variant_name}</button>`).join('')}
+          </div>` : '';
+    return `
+      <article class="product-card reveal" data-name="${item.name}">
+        <figure class="product-media">
+          ${badgeHtml}
+          <img src="${item.image_url}" alt="${item.name}" loading="lazy">
+        </figure>
+        <div class="product-info">
+          <h3>${item.name}</h3>
+          <p class="product-desc">${item.description || ''}</p>
+          ${sizeSelectorHtml}
+          <p class="product-price">$ <span class="price-value">${formatPrice(defaultVariant.price)}</span></p>
+          <button type="button" class="btn btn-whatsapp" data-order-add data-name="${item.name}" data-variant="${defaultVariant.variant_name}" data-price="${formatPrice(defaultVariant.price)}">Agregar al pedido</button>
+        </div>
+      </article>`;
+  }
+
+  function renderSideItem(item) {
+    const variant = item.menu_item_variants[0];
+    return `
+      <div class="side-item">
+        <img src="${item.image_url}" alt="${item.name}" loading="lazy">
+        <div>
+          <div class="side-copy">
+            <h4>${item.name}</h4>
+            <span>$ ${formatPrice(variant.price)}</span>
+          </div>
+          <button type="button" class="side-add" data-order-add data-name="${item.name}" data-price="${formatPrice(variant.price)}" aria-label="Agregar ${item.name} al pedido">+</button>
+        </div>
+      </div>`;
+  }
+
+  function renderExtraLi(item) {
+    const variant = item.menu_item_variants[0];
+    return `<li>${item.name} <span class="extras-price-row"><span class="extras-price">$ ${formatPrice(variant.price)}</span><button type="button" class="extras-add" data-order-add data-name="${item.name}" data-price="${formatPrice(variant.price)}" aria-label="Agregar ${item.name} al pedido">+</button></span></li>`;
+  }
+
+  async function loadMenu() {
+    const catalogGrid = document.getElementById('catalogGrid');
+    const sidesGrid = document.getElementById('sidesGrid');
+    const bebidasList = document.getElementById('bebidasList');
+    const postresList = document.getElementById('postresList');
+
+    const { data, error } = await supabase
+      .from('menu_items')
+      .select('*, menu_item_variants(*)')
+      .eq('active', true)
+      .order('sort_order');
+
+    if (error || !data) {
+      console.error('Error cargando el menú desde Supabase:', error);
+      if (catalogGrid) catalogGrid.innerHTML = '<p class="section-note">No se pudo cargar el menú. Probá recargar la página.</p>';
+      return;
+    }
+
+    const burgers = data.filter(i => i.category === 'burger');
+    const sides = data.filter(i => i.category === 'side');
+    const bebidas = data.filter(i => i.category === 'bebida');
+    const postres = data.filter(i => i.category === 'postre');
+
+    if (catalogGrid) catalogGrid.innerHTML = burgers.map(renderBurgerCard).join('');
+    if (sidesGrid) sidesGrid.innerHTML = sides.map(renderSideItem).join('');
+    if (bebidasList) bebidasList.innerHTML = bebidas.map(renderExtraLi).join('');
+    if (postresList) postresList.innerHTML = postres.map(renderExtraLi).join('');
+  }
+
+  await loadMenu();
 
   /* ---------- Header: fondo sólido al scrollear ---------- */
   const header = document.getElementById('siteHeader');
@@ -303,11 +392,26 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const total = order.reduce((sum, i) => sum + i.qty * i.price, 0);
     const message = buildOrderMessage();
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 
     // window.open debe llamarse de forma síncrona en el click, si no el navegador lo bloquea como pop-up.
     window.open(url, '_blank', 'noopener');
+
+    // Guardamos el pedido en Supabase para que aparezca en el panel de administración.
+    // No bloqueamos el flujo de WhatsApp si esto falla (ej. sin internet momentáneo).
+    supabase.from('orders').insert({
+      customer_name: orderName.value.trim(),
+      phone: orderPhone.value.trim(),
+      delivery_method: orderDelivery?.value || 'Retiro en el local',
+      time_preference: orderTime?.value.trim() || 'Lo antes posible',
+      payment_method: orderPayment?.value || 'Efectivo',
+      items: order,
+      total: total
+    }).then(({ error }) => {
+      if (error) console.error('Error guardando el pedido en Supabase:', error);
+    });
 
     clearOrder();
     closeOrder();
